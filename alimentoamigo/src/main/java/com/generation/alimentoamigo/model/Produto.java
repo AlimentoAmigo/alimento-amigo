@@ -1,7 +1,9 @@
 package com.generation.alimentoamigo.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Entity;
@@ -10,7 +12,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
@@ -33,9 +34,9 @@ public class Produto {
 	private int quantidade;
 	
 	@NotNull(message = "A Data de validade é obrigatória!")
-	private Date data_validade;
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	private LocalDate data_validade;
 	
-	@NotBlank(message = "O atributo Preço é obrigatório!")
 	private Double preco;
 	
 	@Size(max = 5000, message = "O link da foto não pode ser maior do que 5000 caracteres")
@@ -77,11 +78,11 @@ public class Produto {
 		this.quantidade = quantidade;
 	}
 
-	public Date getData_validade() {
+	public LocalDate getData_validade() {
 		return data_validade;
 	}
 
-	public void setData_validade(Date data_validade) {
+	public void setData_validade(LocalDate data_validade) {
 		this.data_validade = data_validade;
 	}
 
