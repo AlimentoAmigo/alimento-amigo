@@ -24,7 +24,7 @@ import com.generation.alimentoamigo.repository.ProdutoRepository;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/produto")
+@RequestMapping("/produto/all")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ProdutoController {
 

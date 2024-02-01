@@ -1,5 +1,6 @@
 package com.generation.alimentoamigo.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,6 +23,7 @@ public class Usuario {
 	@Size(min = 2, max = 255, message = "O nome deve ter no mínimo 2 caracteres e no máximo 255")
 	private String nome;
 
+	@Schema (example = "email@email.com")
 	@NotNull(message = "O Atributo Usuário é Obrigatório!")
 	@Email(message = "O Atributo Usuário deve ser um email válido!")
 	private String usuario;
