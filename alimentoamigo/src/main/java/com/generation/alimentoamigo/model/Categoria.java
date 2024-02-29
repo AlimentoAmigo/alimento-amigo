@@ -67,6 +67,16 @@ public class Categoria {
 	public void setProduto(List<Produto> produto) {
 		this.produto = produto;
 	}
+
+	public Categoria(Long id,String tipo,String descricao) {
+			
+		this.id = id;
+		this.tipo = tipo;
+		this.descricao = descricao;
+	}
+
+	public Categoria() {
+	}
 	
 
 
